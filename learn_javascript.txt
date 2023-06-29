@@ -1,0 +1,291 @@
+(1).  ****************************************variables in js...********************************************************************************
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+VAR
+LET
+CONST
+
+VAR..
+
+1. var is a global scope..
+ meaning =>  isko hum kisi function me define karke us function me kahin bhi use kar sakte hain..
+
+2. Hoisting..
+  meaning => it means that you can use variables and functions before they are actually declared in your code.
+
+console.log(message);
+var message = "Hello, world!";
+
+
+3. Global scope: 
+   If a var variable is declared outside of any function, it becomes a global variable and is accessible throughout the entire JavaScript program.
+  
+4. Variable redeclaration: 
+   Unlike let and const, variables declared with var can be redeclared within the same scope without causing an error.
+
+var name = "John";
+var name = "Sarah";
+console.log(name);
+o/p -- sarah 
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Let..
+
+
+Block scope:
+ Variables declared with let have block scope, meaning they are limited to the block in which they are defined.
+ A block is any set of curly braces {} that defines a scope, such as within an if statement, for loop, or function.
+
+if (true) {
+  let x = 5;
+  console.log(x); // Outputs 5
+}
+console.log(x); // Throws a ReferenceError: x is not defined
+
+
+hoisting : 
+  not possible
+
+variable redeclaration: not possible
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+*****similarly for const********
+
+######################################################################################################################################################
+#####################################################################################################################################################
+
+then what is difference between let and const
+
+ans==>
+       Mutability:
+          Variables declared with let can have their values reassigned, whereas variables declared with const cannot be reassigned after their initial assignment
+
+let x = 5;
+x = 10; // Valid reassignment
+console.log(x); // Outputs 10
+
+const y = 5;
+y = 10; // Throws a TypeError: Assignment to a constant variable
+
+ 
+
+Initialization:
+ Variables declared with let can be declared without an initial value and assigned later, whereas variables declared with const must be assigned a value at the time of declaration.
+
+        let x;
+x = 5; // Valid assignment
+console.log(x); // Outputs 5
+
+const y; // Throws a SyntaxError: Missing initializer in const declaration
+
+
+######################################################################################################################################################
+#####################################################################################################################################################
+
+(2):   datatype
+two types
+
+Primitive data types:
+   are immutable, meaning their values cannot be changed once assigned, while non-primitive types can be modified.
+   Primitive types are compared by value, while non-primitive types are compared by reference.
+
+1.number
+
+2.boolean
+
+3.string
+
+4.Undefined:
+ Represents an uninitialized variable or a variable with no assigned value. If you declare a variable without initializing it, it will have the value undefined by default.
+
+5. Null:
+     In JavaScript, null is a special value that represents empty or unknown value. 
+----------------------------------------
+
+Non-primitive types
+   are typically larger in size and require more memory compared to primitive types.
+   datatype is used to store the data
+
+Object:
+ Represents a collection of key-value pairs, where values can be of any type (including other objects).
+Array:
+ Represents an ordered list of values, similar to objects but with numeric indices.
+Function:
+ Represents a reusable block of code that can be invoked.
+Date:
+ Represents a specific moment in time.
+RegExp:
+ Represents a regular expression for pattern matching.
+Map, Set, and other built-in objects: Introduced in ECMAScript 6, these provide specialized data structures.
+
+
+######################################################################################################################################################
+#####################################################################################################################################################
+
+(3) FUNCTIONS
+
+in the js we use the function for perform any specific task or calculate some values 
+
+
+syntex: 
+(1)  function myfunction(){
+
+}
+-----------------------------------
+calling function:-
+
+     function myfunction(){
+        
+
+}
+
+
+   mufunction();
+----------------------------------------
+Function with Parameters:-
+
+// program to print the text
+// declaring a function
+function greet(name) {
+    console.log("Hello " + name + ":)");
+}
+
+// variable name can be different
+let name = prompt("Enter a name: ");
+
+// calling function
+greet(name);
+
+---------------------------------------------
+
+Function Return:----
+
+function add(a,b){
+    return a+b;
+}
+
+let result = add(2,4)
+
+console.log(result)
+
+---------------------------------------------
+
+other ways to Function Expressions
+
+// program to find the square of a number
+// function is declared inside the variable
+let x = function (num) { return num * num };
+console.log(x(4));
+
+// can be used as variable value for other variables
+let y = x(3);
+console.log(y);
+------------------------------------------------------------------------------------
+
+Benefits of Using a Function
+
+Function makes the code reusable. You can declare it once and use it multiple times.
+
+Function makes the program easier as each small task is divided into a function.
+
+Function increases readability.
+
+######################################################################################################################################################
+#####################################################################################################################################################
+
+JavaScript Variable Scope:-
+--------------------------------
+
+In JavaScript, a variable has two types of scope:
+
+Global Scope
+Local Scope
+
+######################################################################################################################################################
+######################################################################################################################################################
+
+JavaScript Hoisting
+-----------------------------
+
+Hoisting in JavaScript is a behavior in which a function or a variable can be used before declaration.
+ For example,
+
+// using test before declaring
+console.log(test);   // undefined
+var test;
+
+######################################################################################################################################################
+######################################################################################################################################################
+JavaScript Recursion
+
+Recursion is a process of calling itself. A function that calls itself is called a recursive function.
+
+example:
+
+function recurse() {
+    // function code
+    recurse();
+    // function code
+}
+
+recurse();
+
+It is calling itself inside the function.
+
+
+A recursive function must have a condition to stop calling itself. Otherwise, the function is called indefinitely.
+
+function recurse() {
+    if(condition) {
+        recurse();
+    }
+    else {
+        // stop calling recurse()
+    }
+}
+
+recurse();
+----------------------------------------------
+
+example
+
+// program to count down numbers to 1
+function countDown(number) {
+
+    // display the number
+    console.log(number);
+
+    // decrease the number value
+    const newNumber = number - 1;
+
+    // base case
+    if (newNumber > 0) {
+        countDown(newNumber);
+    }
+}
+
+countDown(4);
+------------------------------------------------
+
+Example 2: Find Factorial
+// program to find the factorial of a number
+function factorial(x) {
+
+    // if number is 0
+    if (x === 0) {
+        return 1;
+    }
+
+    // if number is positive
+    else {
+        return x * factorial(x - 1);
+    }
+}
+
+const num = 3;
+
+// calling factorial() if num is non-negative
+if (num > 0) {
+    let result = factorial(num);
+    console.log(`The factorial of ${num} is ${result}`);
+}------------------------------------------------------------
+
