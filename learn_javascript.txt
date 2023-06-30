@@ -289,3 +289,111 @@ if (num > 0) {
     console.log(`The factorial of ${num} is ${result}`);
 }------------------------------------------------------------
 
+######################################################################################################################################################
+######################################################################################################################################################
+
+objects javascript
+++++++++++++++++++++++++
+
+JavaScript object is a non-primitive data-type that allows you to store multiple collections of data.
+-------------------------------
+const student = {
+    firstName: 'ram',
+    class: 10
+};
+----------------------------------
+
+#####################Accessing Object Properties##################################
+
+1. Using dot Notation
+
+const person = { 
+    name: 'John', 
+    age: 20, 
+};
+
+// accessing property
+console.log(person.name); // John
+-----------------------------------------------
+
+2. Using bracket Notation
+
+const person = { 
+    name: 'John', 
+    age: 20, 
+};
+
+// accessing property
+console.log(person["name"]); // John
+-----------------------------------------------
+
+##############################JavaScript Nested Objects$#################################
+
+// nested object
+const student = { 
+    name: 'John', 
+    age: 20,
+    marks: {
+        science: 70,
+        math: 75
+    }
+}
+
+// accessing property of student object
+console.log(student.marks); // {science: 70, math: 75}
+
+// accessing property of marks object
+console.log(student.marks.science); // 70
+
+
+
+######################################################################################################################################################
+######################################################################################################################################################
+
+METHODS
+---------------------------------
+
+
+In JavaScript, objects can also contain functions. For example,
+
+// object containing method
+const person = {
+    name: 'John',
+    greet: function() { console.log('hello'); }
+};
+
+---------------------------------------
+Accessing Object Methods
+
+---------------------------
+// accessing method and property
+const person = {
+    name: 'John',
+    greet: function() { console.log('hello'); }
+};
+
+// accessing property
+person.name; // John
+
+// accessing method
+person.greet(); // hello
+
+###############################JavaScript this Keyword$########################################
+
+To access a property of an object from within a method of the same object, you need to use the this keyword. Let's consider an example.
+
+const person = {
+    name: 'John',
+    age: 30,
+
+    // accessing name property by using this.name
+    greet: function() { console.log('The name is' + ' ' + this.name); }
+};
+
+person.greet();
+
+####################################################################################################################
+####################################################################################################################3
+
+######################################JavaScript Constructor Function###########################################
+
